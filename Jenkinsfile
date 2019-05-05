@@ -25,4 +25,9 @@ node {
         //spinning up Docker container with port 8090:8080
    	  sh 'docker run -p 8090:8080 -d --name my-app sagarjavia87/hello-world:2.0.0'
    }
+   stage('Deployment to K8S'){
+        //Deploying it to K8S cluster
+        IMAGE="sagarjavia87/hello-world:2.0.0"
+        kubectl set image deployment/sagarjavia87/hello-world:2.0.0
+   }
 }
