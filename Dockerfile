@@ -1,3 +1,3 @@
-FROM openjdk:8
-COPY target/demo-*.jar /demo.jar
+FROM openjdk
+COPY target/*.jar /demo.jar
 CMD ["java" , "-jar", "/demo.jar"]
